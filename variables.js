@@ -10,14 +10,14 @@ var isLoggedIn = false;
 // any
 var hero;
 function getHero() {
-    return "thor";
+  return "thor";
 }
 hero = getHero();
 var newHero;
 function cast() {
-    return "cast is coming";
+  return "cast is coming";
 }
 function getNewHero() {
-    return cast();
+  return cast();
 }
 newHero = getNewHero();
