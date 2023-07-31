@@ -129,13 +129,27 @@ let person = {
 // writablePerson.age++;
 // console.log(readonlyPerson.age);
 
-declare function getStringArray(): StringArray; // declare function and return the stringArray
+// declare function getStringArray(): StringArray; // declare function and return the stringArray
 
-// cut
-interface StringArray {
-  [index: number]: string;
+// // cut
+// interface StringArray {
+//   [index: number]: string;
+// }
+
+// const myArray: StringArray = getStringArray();
+// const secondItem = myArray[1];
+// console.log(secondItem);
+
+type User = {
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+
+function createUser(user: User): User {
+  return { name: "John", email: "a@b.com", isActive: false };
 }
 
-const myArray: StringArray = getStringArray();
-const secondItem = myArray[1];
-console.log(secondItem);
+createUser({ name: "John", email: "a@b.com", isActive: false });
+
+export {};
