@@ -87,22 +87,55 @@ let person = {
 
 // EXAMPLE 2
 
-interface Home {
-  readonly resident: { name: string; age: number };
+// interface Home {
+//   readonly resident: { name: string; age: number };
+// }
+
+// function visitForBDay(home: Home) {
+//   // read and update properties from home.resident
+
+//   // here content can be changed but home.resident object can't be changed
+//   console.log(`Happy birthday ${home.resident.name}`);
+//   home.resident.age++;
+// }
+
+// function evict(home: Home) {
+//   //can't write to the 'resident' property itself on a 'Home'
+//   home.resident = {
+//     name: "Victor the Evictor",
+//     age: 42,
+//   };
+// }
+
+// interface Person {
+//   name: string;
+//   age: number;
+// }
+
+// interface ReadonlyPerson {
+//   readonly name: string;
+//   readonly age: number;
+// }
+
+// let writablePerson: Person = {
+//   name: "Person 1",
+//   age: 42,
+// };
+
+// // working
+// let readonlyPerson: ReadonlyPerson = writablePerson;
+
+// console.log(readonlyPerson.age);
+// writablePerson.age++;
+// console.log(readonlyPerson.age);
+
+declare function getStringArray(): StringArray; // declare function and return the stringArray
+
+// cut
+interface StringArray {
+  [index: number]: string;
 }
 
-function visitForBDay(home: Home) {
-  // read and update properties from home.resident
-
-  // here content can be changed but home.resident object can't be changed
-  console.log(`Happy birthday ${home.resident.name}`);
-  home.resident.age++;
-}
-
-function evict(home: Home) {
-  //can't write to the 'resident' property itself on a 'Home'
-  home.resident = {
-    name: "Victor the Evictor",
-    age: 42,
-  };
-}
+const myArray: StringArray = getStringArray();
+const secondItem = myArray[1];
+console.log(secondItem);
