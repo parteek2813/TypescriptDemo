@@ -22,3 +22,4 @@ heroPower.push(1);
 
 AllUsers.push({name: "spiderman", isActive:true})
 
+export {}
